@@ -1,7 +1,7 @@
 +++
 title = "Attacking DHCP"
 date = "2020-10-27T21:11:19+02:00"
-tags = ["dhcp", "offensive"]
+tags = ["dhcp", "offensive", "defensive"]
 description = "How to attack the DHCP protocol from inside a network."
 +++
 
@@ -49,7 +49,7 @@ For more informations about the DHCP, check the [Wikipedia page](https://en.wiki
 
 This first attack consists of exhausting the DHCP server's IP addresses pool with a huge number of requests.
 
-The attacker sends many DHCP requests with differents MAC addresses, which result in using all the available IP addresses. All the new machines taht will try to connect to the network will not have any IP.
+The attacker sends many DHCP requests with differents MAC addresses, which result in using all the available IP addresses. All the new machines that will try to connect to the network will not have any IP.
 
 Then, the attacker can configure his working machine to be the new DHCP server to serve the new machines.
 
@@ -61,7 +61,7 @@ There is a famous framework for level 2 attacks called `yersinia` that allow us 
 # yersinia dhcp -attack 1 -interface eth0
 ```
 
-After specifying the protocol with the DHCP argument, we indicate the attack mode. `-attack 1` corresponds to 'DoOS attack sending discover packets' (see [this section](#the-dhcp-protocol)). The flag `-interface` allow us to specify which interface to use during the attack.
+After specifying the protocol with the DHCP argument, we indicate the attack mode. `-attack 1` corresponds to 'DoS attack sending discover packets' (see [this section](#the-dhcp-protocol)). The flag `-interface` allow us to specify which interface to use during the attack.
 
 To stop the attack, just kill the process :
 
@@ -87,7 +87,7 @@ As seen before, `yersinia` allows us to do this attack :
 # yersinia dhcp -attack 2 -interface eth0
 ```
 
-where `-attack 2` means 'nonDoS attack creating DHCP rogue server'. This attack mode does not need to use DoS, as it's implementation is probably faster than standard DHCP used in home/office routers.
+where `-attack 2` means 'nonDoS attack creating DHCP rogue server'. This attack mode does not need to use DoS, as its implementation is probably faster than standard DHCP used in home/office routers.
 
 ## How to protect
 
