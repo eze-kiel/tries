@@ -25,7 +25,7 @@ DHCP Client                   DHCP Server
              DHCP Request
                                    +
     <------------------------------+
-        DHCP Ack ( or Decline, Nack)
+       DHCP Ack (or Decline, Nack)
     +
     +------------------------------>
              DHCP Release
@@ -49,4 +49,4 @@ For more informations about the DHCP, check the [Wikipedia page](https://en.wiki
 
 This first attack consists of exhausting the DHCP server's IP addresses pool with a huge number of requests.
 
-The attacker sends many DHCP requests with differents MAC addresses, which 
+The attacker sends many DHCP requests with differents MAC addresses, which result in
