@@ -93,4 +93,34 @@ where `-attack 2` means 'nonDoS attack creating DHCP rogue server'. This attack 
 
 Being offensive is nice, but it's interesting to see the _blue side_ of the Force. I'll talk about Cisco equipment features.
 
-There is 2 principal ways to avoid those attacks : **DHCP snooping** and **IP source guard**.
+There is 2 principal ways to avoid those attacks on Cisco equipments : **DHCP snooping** and **IP source guard**.
+
+* DHCP snooping allows to filter suspicious DHCP requests, and building what is called a 'DHCP binding table'. This table contains the DHCP attributions, as MAC addresses, IP addresses, lease duration, VLAN number and corresponding interface.
+
+The sysadmin can specify on the switch trusted interfaces on which DHCP offers and DHCP {Ack,NAck} can be received. Those interfaces are designated as **trusted**, and others as **untrusted**.
+
+Each interface that link a client to the switch must be set to untrusted, which only permit DHCP Discover/Request packets to enter; others are dropped.
+
+Ports on which a DHCP server is connected must be set as trusted in order for the switch to accept DHCP Offers and DHCP {Ack,NAck} packets.
+
+The DCHP binding table holds information about untrusted ports, and is fed by dynamic entries learnt via DHCP. On an important network, it is recommended to outsource this table : locally, it is stored in flash memory. For each new entry, its content have to be erased and wrote again. It can also generate heavy CPU loads, and is case of shutdown, all the tables are lost.
+
+It is possible to configure automatic outsourcing as following :
+
+```
+(config)# ip dhcp snooping database ftp://192.168.42.69/binding-table.dhcp
+(config)# ip dhcp snooping database write-delay 300
+```
+
+In the example we use FTP, but HTTP, RCP and TFTP are allowed too. `write-delay` is the duration between every copy when the table changes.
+
+* IP source guard allow us to protect from IP usurpation obtained by DHCP. In this kind of attack, the attacker changes his IP and/or his MAC address in order to access a remote machine (IP spoofing) or to avoid ACL set by the sysadmin.
+
+IP source guard uses the DHCP binding table. At the beginning all the IP traffic is dropped, except DHCP packets. Once a client has received a valid IP from the server, a VLAN ACL is set on the corresponding port. All the traffic emitted with another IP∕MAC on this port will be dropped.
+
+To configure IP source guard on a Cisco swicth, you can enter :
+
+```
+(config)# interface FastEthernet1/0/3   # or whatever interface you want
+(config-if)# ip verify source port security
+```
