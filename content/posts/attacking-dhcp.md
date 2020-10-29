@@ -35,15 +35,15 @@ We can see 7 different kinds of frames :
 
 * DHCP Discover : this frame is broadcasted to all the network, in order to find the DHCP server.
 * DHCP Offer : the server responds to a DHCP discover in unicast. This frame contains network configuration (IP address pool, gateway address...).
-* DHCP Request : the client send a broadcast frame to announce from which server he want to use the configuration from.
+* DHCP Request : the client sends a broadcast frame to announce from which server he want to use the configuration from.
 * DHCP Ack : the chosen DHCP server assigns the IP and configuration parameters and acknowledges.
 * DHCP Nack : the DHCP server rejects the client's request.
 * DHCP Decline : the client rejects the offered IP address.
-* DHCP Release : the client send back his assigned IP address beafore the lease expires.
+* DHCP Release : the client sends back his assigned IP address beafore the lease expires.
 
 Note that the response from the server (the DHCP Offer frame) contains not only the client IP, but other importants parameters as netmask, default gateway, and DNS.
 
-For more informations about the DHCP, check the [Wikipedia page](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol).
+For more informations about DHCP, check the [Wikipedia page](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol).
 
 ## DHCP starvation attack
 
