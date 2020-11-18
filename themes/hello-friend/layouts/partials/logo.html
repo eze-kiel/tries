@@ -3,13 +3,13 @@
   class="logo"
   style="text-decoration: none;"
 >
-  {{ if $.Site.Params.Logo.path }}
-    <img src="{{ $.Site.Params.Logo.path }}" alt="{{ $.Site.Params.Logo.alt }}" />
-    {{ else }}
-    <span class="logo__mark">{{ partial "greater-icon.html" . }}</span>
-    <span class="logo__text"
-      >{{ with $.Site.Params.Logo.logoText }}{{ . }}{{ else }}hello friend{{ end }}</span
-    >
+  <!-- {{ if $.Site.Params.Logo.path }} -->
+    <img src="https://d1j8pt39hxlh3d.cloudfront.net/emoji/emojione/5.0/png/unicode/32/1f47e.png" alt="{{ $.Site.Params.Logo.alt }}" />
+    <!-- {{ else }} -->
+    <!-- <span class="logo__mark">{{ partial "greater-icon.html" . }}</span> -->
+    <!-- <span class="logo__text" -->
+      <!-- >{{ with $.Site.Params.Logo.logoText }}{{ . }}{{ else }}hello friend{{ end }}</span -->
+    <!-- > -->
     <span class="logo__cursor"></span>
-  {{ end }}
+  <!-- {{ end }} -->
 </a>
