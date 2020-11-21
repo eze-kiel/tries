@@ -63,6 +63,16 @@ There is a famous framework for level 2 attacks called `yersinia` that allow us 
 
 After specifying the protocol with the DHCP argument, we indicate the attack mode. `-attack 1` corresponds to 'DoS attack sending discover packets' (see [this section](#the-dhcp-protocol)). The flag `-interface` allow us to specify which interface to use during the attack.
 
+Once the attack is launched, we can check the MAC address available space on the switch:
+
+```
+Cisco2960# show mac address-table count
+...
+Total Mac Address Space Available : 0
+```
+
+It works ! Now, you can create your own DHCP rogue server :)
+
 To stop the attack, just kill the process :
 
 ```
