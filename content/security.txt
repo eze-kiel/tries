@@ -1,0 +1,4 @@
+Contact: ezekiel[at]fastmail[dot]com
+Contact: keybase.io/ezekiell/chat
+Preferred-Languages: fr, en
+Canonical: https://pwnthe.net/security.txt
