@@ -371,3 +371,10 @@ Disassembly of section .text:
   401021:	b0 3c                	mov    al,0x3c
   401023:	0f 05                	syscall
 ```
+
+Once again, if we compile and launch this program, everything works perfectly:
+
+```
+$ ./hellorel
+hello
+```
