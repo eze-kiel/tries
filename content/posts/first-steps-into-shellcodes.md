@@ -1,6 +1,6 @@
 +++
 title = "First steps into shellcodes"
-date = "2020-12-30T12:11:19+02:00"
+date = "2021-01-03T23:08:19+02:00"
 tags = ["assembly", "buffer overflow", "c", "exploitation", "shellcode", "x86_64"]
 description = "First steps into writing shellcodes and executing them."
 +++
