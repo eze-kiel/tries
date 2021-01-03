@@ -342,7 +342,7 @@ The corresponding shellcode is
 
 It has a length of 37 bytes.
 
-If we check the compiled object with `objdump`, we clearly see that the address stored in RSI is relative to RPI:
+If we check the compiled object with `objdump`, we clearly see that the address stored in RSI is relative to RIP:
 
 ```
 $ objdump -M intel -d hellorel
