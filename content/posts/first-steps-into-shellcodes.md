@@ -340,7 +340,7 @@ The corresponding shellcode is
 \xeb\x06\x68\x65\x6c\x6c\x6f\x0a\x48\x31\xc0\x48\x31\xff\x48\x31\xd2\xb0\x01\x40\xb7\x01\x48\x8d\x35\xe5\xff\xff\xff\xb2\x06\x0f\x05\xb0\x3c\x0f\x05
 ```
 
-It has a lentgh of 37 bytes.
+It has a length of 37 bytes.
 
 If we check the compiled object with `objdump`, we clearly see that the address stored in RSI is relative to RPI:
 
