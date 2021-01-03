@@ -1,7 +1,7 @@
 +++
 title = "Attacking DHCP"
 date = "2020-10-27T21:11:19+02:00"
-tags = ["lvl2", "dhcp", "offensive", "defensive"]
+tags = ["defensive", "dhcp", "lvl2", "offensive"]
 description = "How to attack the DHCP protocol from inside a network."
 +++
 
