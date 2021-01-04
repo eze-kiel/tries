@@ -2,4 +2,4 @@ Contact: ezekiel[at]fastmail[dot]com
 Contact: keybase.io/ezekiell/chat
 Encryption: https://pwnthe.net/pgp-key.txt
 Preferred-Languages: fr, en
-Canonical: httpŝ://pwnthe.net/security.txt
+Canonical: https://pwnthe.net/security.txt
