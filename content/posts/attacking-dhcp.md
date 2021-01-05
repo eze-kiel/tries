@@ -5,6 +5,11 @@ tags = ["defensive", "dhcp", "lvl2", "offensive"]
 description = "How to attack the DHCP protocol from inside a network."
 +++
 
+- [The DHCP protocol](#the-dhcp-protocol)
+- [DHCP starvation attack](#dhcp-starvation-attack)
+- [DHCP rogue server attack](#dhcp-rogue-server-attack)
+- [How to protect](#how-to-protect)
+
 This article will introduce 2 different kinds of DHCP attacks : **DHCP starvation attack** and **DHCP rogue server attack**. But first, some reminders.
 
 ## The DHCP protocol

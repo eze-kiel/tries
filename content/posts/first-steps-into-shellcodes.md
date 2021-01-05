@@ -5,6 +5,14 @@ tags = ["assembly", "c", "exploitation", "shellcode", "x86_64"]
 description = "First steps into writing shellcodes and executing them."
 +++
 
+- [Create the first payload](#create-the-first-payload)
+- [Change the assembly code to avoid null bytes](#change-the-assembly-code-to-avoid-null-bytes)
+- [Automate opcodes extraction](#automate-opcodes-extraction)
+- [Shellcode development techniques](#shellcode-development-techniques)
+  - [JMP, CALL, POP](#jmp-call-pop)
+  - [Stack technique](#stack-technique)
+  - [RIP relative addressing technique](#rip-relative-addressing-technique)
+
 The term shellcode simply represent machine code in places where it is not normally found, such as a char array.
 
 ## Create the first payload

@@ -5,6 +5,10 @@ tags = ["defensive", "lvl2", "offensive"]
 description = "How to turn a switch into a hub."
 +++
 
+- [CAM Table functionning](#cam-table-functionning)
+- [Executing the attack](#executing-the-attack)
+- [How to protect from MAC Address Flooding](#how-to-protect-from-mac-address-flooding)
+
 This short article will introduce the CAM Table Overflow attack, which can be used to turn a switch into a hub.
 
 ## CAM Table functionning
