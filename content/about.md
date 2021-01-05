@@ -2,7 +2,7 @@
 title = "About me"
 +++
 
-I started with Arduinos, and unexpectedly ended up smashing stacks and uploading malicious PHP on clients' websites. But meantime, I worked with sequencial function charts, MODBUS, electronics boards, and all the stuff that goes _bip boop_ and unexpectedly overheats.
+I started with Arduinos, and unexpectedly ended up smashing stacks and uploading malicious PHP on clients' websites. But meantime, I worked with sequencial function charts, Modbus RTU/TCP, electronics boards, and all the stuff that goes _bip boop_ and unexpectedly overheats.
 
 Since I got my hands on a Linux machine, I never went back. But I don't hate Windows though, it can be really handy to deploy vulnerable labs to play with.
 
