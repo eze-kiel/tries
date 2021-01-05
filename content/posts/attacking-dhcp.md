@@ -5,6 +5,7 @@ tags = ["defensive", "dhcp", "lvl2", "offensive"]
 description = "How to attack the DHCP protocol from inside a network."
 +++
 
+## Table of Contents
 - [The DHCP protocol](#the-dhcp-protocol)
 - [DHCP starvation attack](#dhcp-starvation-attack)
 - [DHCP rogue server attack](#dhcp-rogue-server-attack)

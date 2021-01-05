@@ -5,6 +5,7 @@ tags = ["assembly", "c", "exploitation", "shellcode", "x86_64"]
 description = "First steps into writing shellcodes and executing them."
 +++
 
+## Table of Contents
 - [Create the first payload](#create-the-first-payload)
 - [Change the assembly code to avoid null bytes](#change-the-assembly-code-to-avoid-null-bytes)
 - [Automate opcodes extraction](#automate-opcodes-extraction)
