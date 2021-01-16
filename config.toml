@@ -68,6 +68,6 @@ paginate = 5
         url = "https://kb.pwnthe.net"
       
       [[languages.en.menu.main]]
-        identifier = "tools"
-        name = "Tools"
-        url = "https://pwnthe.net/tools"
+        identifier = "toolbox"
+        name = "Toolbox"
+        url = "https://pwnthe.net/toolbox"
