@@ -149,7 +149,7 @@ And launch a process in the cgroup that will exit instantly:
 Desktop
 ```
 
-Et voilà, you pwnd the host !
+Et voilà, the host has been pwned !
 
 ---
 
