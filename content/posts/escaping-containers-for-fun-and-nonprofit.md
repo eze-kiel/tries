@@ -53,7 +53,7 @@ $ docker inspect --format='{{.HostConfig.Privileged}}' 65b7d7b83eb8
 true
 ```
 
-As you can see, the container labeled `amazing_swirles`, with ID `65b7d7b83eb8` is running as priviledged.
+As you can see, the container labeled `amazing_swirles`, with ID `65b7d7b83eb8` is running as privileged.
 
 Note that if you are able to run `docker` without using `sudo` on the host, there is an easier way to gain root access.
 
@@ -73,7 +73,7 @@ dev         lib         lost+found  proc        srv         usr
 
 # Exploiting cgroups
 
-This exploit is easy to execute, and can be really efficient, as container that are running with `--privileged` option are quite common. But before exploitation, we need to setup a vulnerable container to play with !
+This exploit is easy to execute, and can be really efficient, as containers that are running with `--privileged` option are quite common. But before exploitation, we need to setup a vulnerable container to play with !
 
 ## Setup a vulnerable container
 
