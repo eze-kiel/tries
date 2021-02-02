@@ -303,6 +303,10 @@ We're in !
 
 As I said at the beginning of this section, this attack is more for demonstration purposes. In fact, there is nothing new here as we just do what I showed in the first part when I was talking about an easy way to get full access on an host using `docker`, except that this time wa did everything from another container using the API.
 
+---
+
+We just have scratched the surface of what we can do with Docker. In reality, there is  a lot more way of hacking with Docker, from inside and outside a container, and old CVEs to play with !
+
 Happy hacking ! 👾
 
 [^1]: https://blog.trailofbits.com/2019/07/19/understanding-docker-container-escapes/
