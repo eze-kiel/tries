@@ -2,7 +2,7 @@
 title = "Escaping Docker containers for fun and (non)profit"
 date = "2021-02-01T21:11:19+02:00"
 tags = ["containers", "docker", "escaping", "privesc"]
-description = "This post will cover some techniques to escape Docker containers and gain access to the host."
+description = "This post will cover some basic techniques to escape Docker containers and gain access to the host."
 +++
 
 ## Table of Contents
