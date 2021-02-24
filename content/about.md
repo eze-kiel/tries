@@ -17,4 +17,5 @@ $ ./contact.sh
 └── keybase: keybase.io/ezekiell/chat
 ```
 
-<~ih2LpTRl*qM;k1^ih1h]TUt/9PN&6tih1h]TTA**LZ4tXih2k%TTS6,T&QEG~>
+[What about a little game ?](https://pastebin.com/AmiGL1d0)
+<!-- 9bCb0`D0f9b0AoSSH_C5 -->
