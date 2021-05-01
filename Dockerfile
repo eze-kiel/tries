@@ -22,6 +22,6 @@ RUN git clone https://github.com/${GITHUB_USERNAME}/${GITHUB_REPOSITORY}.git
 
 WORKDIR ${GITHUB_REPOSITORY}/source
 
-ENTRYPOINT [ "hugo", "server", "--bind", "0.0.0.0" ]
-
 EXPOSE 1313
+
+ENTRYPOINT [ "hugo", "server", "--bind", "0.0.0.0" ]
