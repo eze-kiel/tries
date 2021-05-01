@@ -20,8 +20,8 @@ RUN chmod +x hugo && \
 
 RUN git clone https://github.com/${GITHUB_USERNAME}/${GITHUB_REPOSITORY}.git
 
-WORKDIR ${GITHUB_REPOSITORY}/source
-
-EXPOSE 1313
+WORKDIR ${GITHUB_REPOSITORY}/source/
 
 ENTRYPOINT [ "hugo", "server", "--bind", "0.0.0.0" ]
+
+EXPOSE 1313
